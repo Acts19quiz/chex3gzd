@@ -445,7 +445,7 @@ unsigned char *FGLRenderer::GetTextureBuffer(FTexture *tex, int &w, int &h)
 
 void R_SpreadFirePSX()
 {
-};
+}
 
 //
 // Fire_Out
@@ -453,7 +453,7 @@ void R_SpreadFirePSX()
 
 void Fire_Out()
 {
-};
+}
 
 //
 // R_FirePSX
@@ -461,7 +461,7 @@ void Fire_Out()
 
 void R_FirePSX()
 {
-};
+}
 
 //
 // R_InitFirePSX
@@ -469,7 +469,7 @@ void R_FirePSX()
 
 void FGLRenderer::R_InitFirePSX_()
 {
-};
+}
 
 //
 // R_FirePSXTicker
@@ -477,8 +477,8 @@ void FGLRenderer::R_InitFirePSX_()
 
 void FGLRenderer::R_FirePSXTicker_(bool fireout)
 {
-};
+}
 
 void FGLRenderer::DrawFireTexture(FTexture *img, DrawParms &parms)
 {
-};
+}

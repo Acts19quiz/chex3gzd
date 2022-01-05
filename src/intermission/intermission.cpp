@@ -70,7 +70,7 @@ IMPLEMENT_POINTERS_START(DIntermissionController)
 IMPLEMENT_POINTERS_END
 
 extern int		NoWipe;
-extern bool		endmovie;
+extern bool		endmovie;// Acts 19 quiz
 
 CVAR(Bool, nointerscrollabort, false, CVAR_ARCHIVE | CVAR_GLOBALCONFIG);
 CVAR(Bool, inter_subtitles, false, CVAR_ARCHIVE | CVAR_GLOBALCONFIG);
