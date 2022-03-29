@@ -114,6 +114,7 @@ struct FIWADInfo
 	TArray<FString> Load;	// Wads to be loaded with this one.
 	TArray<FString> Lumps;	// Lump names for identification
 	int flags = 0;
+	int LoadWidescreen = -1;// Acts 19 quiz Imported from LZDoom 3.88b/GZDoom development version fba5c78.
 };
 
 struct FFoundWadInfo

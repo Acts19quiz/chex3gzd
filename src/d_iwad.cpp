@@ -221,6 +221,12 @@ void FIWadManager::ParseIWadInfo(const char *fn, const char *data, int datasize,
 					sc.MustGetString();
 					iwad->Song = sc.String;
 				}
+				else if (sc.Compare("LoadWidescreen"))// Acts 19 quiz Imported from LZDoom 3.88b/GZDoom development version fba5c78.
+				{
+					sc.MustGetStringName("=");
+					sc.MustGetNumber();
+					iwad->LoadWidescreen = sc.Number;
+				}
 				else
 				{
 					sc.ScriptError("Unknown keyword '%s'", sc.String);
@@ -799,6 +805,8 @@ const FIWADInfo *FIWadManager::FindIWAD(TArray<FString> &wadfiles, const char *i
 		DoomStartupInfo.BkColor = iwad_info->BkColor;
 		DoomStartupInfo.FgColor = iwad_info->FgColor;
 	}
+	if (DoomStartupInfo.LoadWidescreen == -1)// Acts 19 quiz Imported from LZDoom 3.88b/GZDoom development version fba5c78.
+		DoomStartupInfo.LoadWidescreen = iwad_info->LoadWidescreen;
 	if (DoomStartupInfo.Type == 0) DoomStartupInfo.Type = iwad_info->StartupType;
 	if (DoomStartupInfo.Song.IsEmpty()) DoomStartupInfo.Song = iwad_info->Song;
 	I_SetIWADInfo();
