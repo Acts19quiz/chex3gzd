@@ -2233,32 +2233,32 @@ static void AddAutoloadFiles(const char *autoname)
 #ifdef _WIN32// Acts 19 quiz
 		if (DoomStartupInfo.LoadLights == 1 || (DoomStartupInfo.LoadLights != 0 && autoloadlights))
 		{
-			const char *lightswad = BaseFileSearch ("CQ3gldef.pk3", NULL, true);// Acts 19 quiz
+			const char *lightswad = BaseFileSearch ("cq3gldef.pk3", NULL, true);// Acts 19 quiz
 			if (lightswad)
 				D_AddFile (allwads, lightswad);
 		}
 		if (DoomStartupInfo.LoadBrightmaps == 1 || (DoomStartupInfo.LoadBrightmaps != 0 && autoloadbrightmaps))
 		{
-			const char *bmwad = BaseFileSearch ("CQmpg.pk3", NULL, true);// Acts 19 quiz
+			const char *bmwad = BaseFileSearch ("cq3mpg.pk3", NULL, true);// Acts 19 quiz
 			if (bmwad)
 				D_AddFile (allwads, bmwad);
 			else// Acts 19 quiz
 			{
-				const char *smwad = BaseFileSearch ("CQsmk.pk3", NULL, true);// Acts 19 quiz
+				const char *smwad = BaseFileSearch ("cq3smk.pk3", NULL, true);// Acts 19 quiz
 				if (smwad)
 					D_AddFile (allwads, smwad);
 			}
 		}
 #else
-		const char *lightswad = BaseFileSearch ("CQ3gldef.pk3", NULL, true);// Acts 19 quiz
+		const char *lightswad = BaseFileSearch ("cq3gldef.pk3", NULL, true);// Acts 19 quiz
 		if (lightswad)
 			D_AddFile (allwads, lightswad);
-		const char *bmwad = BaseFileSearch ("CQmpg.pk3", NULL, true);// Acts 19 quiz
+		const char *bmwad = BaseFileSearch ("cq3mpg.pk3", NULL, true);// Acts 19 quiz
 		if (bmwad)
 			D_AddFile (allwads, bmwad);
 		else// Acts 19 quiz
 		{
-			const char *smwad = BaseFileSearch ("CQsmk.pk3", NULL, true);// Acts 19 quiz
+			const char *smwad = BaseFileSearch ("cq3smk.pk3", NULL, true);// Acts 19 quiz
 			if (smwad)
 				D_AddFile (allwads, smwad);
 		}
