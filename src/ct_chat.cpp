@@ -75,14 +75,14 @@ static bool DoSubstitution (FString &out, const char *in);
 
 static TArray<uint8_t> ChatQueue;
 
-CVAR (String, chatmacro1, "I'm ready to kick butt!", CVAR_ARCHIVE)
-CVAR (String, chatmacro2, "I'm OK.", CVAR_ARCHIVE)
-CVAR (String, chatmacro3, "I'm not looking too good!", CVAR_ARCHIVE)
-CVAR (String, chatmacro4, "Help!", CVAR_ARCHIVE)
-CVAR (String, chatmacro5, "You suck!", CVAR_ARCHIVE)
-CVAR (String, chatmacro6, "Next time, scumbag...", CVAR_ARCHIVE)
-CVAR (String, chatmacro7, "Come here!", CVAR_ARCHIVE)
-CVAR (String, chatmacro8, "I'll take care of it.", CVAR_ARCHIVE)
+CVAR (String, chatmacro1, "I'm ready to zorch!", CVAR_ARCHIVE)//Matches chex.exe down through macro8.--Acts 19 quiz
+CVAR (String, chatmacro2, "I'm feeling great!", CVAR_ARCHIVE)
+CVAR (String, chatmacro3, "I'm getting pretty gooed up!", CVAR_ARCHIVE)
+CVAR (String, chatmacro4, "Somebody help me!", CVAR_ARCHIVE)
+CVAR (String, chatmacro5, "Go back to your own dimension!", CVAR_ARCHIVE)
+CVAR (String, chatmacro6, "Stop that Flemoid", CVAR_ARCHIVE)
+CVAR (String, chatmacro7, "I think I'm lost!", CVAR_ARCHIVE)
+CVAR (String, chatmacro8, "I'll get you out of this gunk.", CVAR_ARCHIVE)
 CVAR (String, chatmacro9, "Yes", CVAR_ARCHIVE)
 CVAR (String, chatmacro0, "No", CVAR_ARCHIVE)
 
