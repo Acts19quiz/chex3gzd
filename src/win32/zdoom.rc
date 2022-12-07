@@ -209,7 +209,7 @@ CAPTION "Welcome"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     ICON            IDI_ICON1,IDC_STATIC,7,7,20,20
-    LTEXT           "Welcome to GZDoom!",IDC_STATIC,43,8,180,8
+    LTEXT           "Welcome to Chex™ Quest 3!",IDC_STATIC,43,8,180,8// Acts 19 quiz
     LTEXT           "<Version info>",IDC_WELCOME_VERSION,43,18,180,8
     GROUPBOX        "IWAD selection",IDC_STATIC,8,32,208,117
     LTEXT           "Select which game file (IWAD) to run.",IDC_STATIC,12,44,190,8
@@ -219,7 +219,7 @@ BEGIN
     GROUPBOX        "Extra Graphics",IDC_STATIC,159,155,59,64
     CONTROL         "Disable &autoload",IDC_WELCOME_NOAUTOLOAD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,86,166,65,10
     CONTROL         "&Lights",IDC_WELCOME_LIGHTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,165,43,10
-    CONTROL         "&Brightmaps",IDC_WELCOME_BRIGHTMAPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,177,51,10
+    CONTROL         "&Movies",IDC_WELCOME_BRIGHTMAPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,177,51,10// Acts 19 quiz
     CONTROL         "&Widescreen",IDC_WELCOME_WIDESCREEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,188,48,12
     CONTROL         "&Don't ask me again",IDC_DONTASKIWAD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,190,72,10
     DEFPUSHBUTTON   "&Play Game!",IDOK,8,227,90,14
@@ -236,7 +236,7 @@ END
 IDD_CRASHDIALOG DIALOGEX 0, 0, 415, 308
 STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
-CAPTION "GZDoom Very Fatal Error"
+CAPTION "Chex™ 3 GZD Very Fatal Error"// Acts 19 quiz
 FONT 8, "MS Shell Dlg", 400, 0, 0x0
 BEGIN
     CONTROL         "",IDC_CRASHTAB,"SysTabControl32",WS_TABSTOP,4,4,404,280
@@ -346,13 +346,13 @@ BEGIN
         BEGIN
             VALUE "Comments", "Thanks to id Software for creating DOOM and then releasing the source code. Thanks also to TeamTNT for creating BOOM, which ZDoom is partially based on. Includes code based on the Cajun Bot 0.97 by Martin Collberg."
             VALUE "CompanyName", " "
-            VALUE "FileDescription", "GZDoom " GIT_DESCRIPTION
+            VALUE "FileDescription", "Chex™ 3 GZD " GIT_DESCRIPTION// Acts 19 quiz
             VALUE "FileVersion", RC_FILEVERSION2
             VALUE "InternalName", "GZDoom"
             VALUE "LegalCopyright", "Copyright © 1993-1996 id Software, 1998-2010 Randy Heit, 2002-2010 Christoph Oelckers, et al."
-            VALUE "LegalTrademarks", "Doom® is a Registered Trademark of id Software, Inc."
-            VALUE "OriginalFilename", "gzdoom.exe"
-            VALUE "ProductName", "GZDoom"
+            VALUE "LegalTrademarks", "Chex™ and Chex Quest™ are trademarks of General Mills, Inc. Chex Quest 3 (game data files, e.g. IPK3, PK3, WAD) cannot be bought or sold under any circumstances."// Acts 19 quiz
+            VALUE "OriginalFilename", "chex3gzd.exe"// Acts 19 quiz
+            VALUE "ProductName", "Chex™ 3 GZD"// Acts 19 quiz
             VALUE "ProductVersion", GIT_DESCRIPTION
         END
     END
