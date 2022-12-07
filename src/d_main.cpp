@@ -1973,18 +1973,30 @@ static void AddAutoloadFiles(const char *autoname, TArray<FString>& allwads)
 	// [SP] Dialog reaction - load lights.pk3 and brightmaps.pk3 based on user choices
 	if (!(gameinfo.flags & GI_SHAREWARE) && !(Args->CheckParm("-noextras")))
 	{
-		if ((GameStartupInfo.LoadLights == 1 || (GameStartupInfo.LoadLights != 0 && autoloadlights)) && !(Args->CheckParm("-nolights")))
+#ifdef _WIN32// Acts 19 quiz
+		if ((GameStartupInfo.LoadLights == 1 || (GameStartupInfo.LoadLights != 0 && autoloadlights)) && !(Args->CheckParm("-nolights")) && !(Args->CheckParm("-nobrightmaps")))// Acts 19 quiz
 		{
-			const char *lightswad = BaseFileSearch ("lights.pk3", NULL, true, GameConfig);
+			const char *lightswad = BaseFileSearch ("cq3gldef.pk3", NULL, true, GameConfig);// Acts 19 quiz
 			if (lightswad)
 				D_AddFile (allwads, lightswad, true, -1, GameConfig);
 		}
-		if ((GameStartupInfo.LoadBrightmaps == 1 || (GameStartupInfo.LoadBrightmaps != 0 && autoloadbrightmaps)) && !(Args->CheckParm("-nobrightmaps")))
+		if (GameStartupInfo.LoadBrightmaps == 1 || (GameStartupInfo.LoadBrightmaps != 0 && autoloadbrightmaps))// Acts 19 quiz
 		{
-			const char *bmwad = BaseFileSearch ("brightmaps.pk3", NULL, true, GameConfig);
+			const char *bmwad = BaseFileSearch ("cq3smk.pk3", NULL, true, GameConfig);// Acts 19 quiz
 			if (bmwad)
 				D_AddFile (allwads, bmwad, true, -1, GameConfig);
 		}
+#else
+		if (!(Args->CheckParm("-nolights")) && !(Args->CheckParm("-nobrightmaps")))// Acts 19 quiz
+		{
+			const char *lightswad = BaseFileSearch ("cq3gldef.pk3", NULL, true, GameConfig);// Acts 19 quiz
+			if (lightswad)
+				D_AddFile (allwads, lightswad, true, -1, GameConfig);
+		}
+		const char *bmwad = BaseFileSearch ("cq3smk.pk3", NULL, true, GameConfig);// Acts 19 quiz
+		if (bmwad)
+			D_AddFile (allwads, bmwad, true, -1, GameConfig);
+#endif// Acts 19 quiz
 		if ((GameStartupInfo.LoadWidescreen == 1 || (GameStartupInfo.LoadWidescreen != 0 && autoloadwidescreen)) && !(Args->CheckParm("-nowidescreen")))
 		{
 			const char *wswad = BaseFileSearch ("game_widescreen_gfx.pk3", NULL, true, GameConfig);
@@ -3607,6 +3619,7 @@ static int D_DoomMain_Internal (void)
 	FString basewad = wad;
 
 	FString optionalwad = BaseFileSearch(OPTIONALWAD, NULL, true, GameConfig);
+	FString helpwad = BaseFileSearch(HELPWAD, NULL, true, GameConfig);// Acts 19 quiz
 
 	iwad_man = new FIWadManager(basewad, optionalwad);
 
@@ -3644,7 +3657,7 @@ static int D_DoomMain_Internal (void)
 
 		TArray<FString> allwads;
 		
-		const FIWADInfo *iwad_info = iwad_man->FindIWAD(allwads, iwad, basewad, optionalwad);
+		const FIWADInfo *iwad_info = iwad_man->FindIWAD(allwads, iwad, basewad, optionalwad, helpwad);// Acts 19 quiz
 		if (!iwad_info) return 0;	// user exited the selection popup via cancel button.
 		if ((iwad_info->flags & GI_SHAREWARE) && pwads.Size() > 0)
 		{
