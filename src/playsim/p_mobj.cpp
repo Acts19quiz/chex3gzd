@@ -3153,7 +3153,8 @@ bool AActor::Slam (AActor *thing)
 		if (!(flags2 & MF2_DORMANT))
 		{
 			int dam = GetMissileDamage (7, 1);
-			int newdam = P_DamageMobj (thing, this, this, dam, NAME_Melee);
+			// int newdam = P_DamageMobj (thing, this, this, dam, NAME_Melee);
+			int newdam = P_DamageMobj (thing, this, this, dam, NAME_Flem);
 			P_TraceBleed (newdam > 0 ? newdam : dam, thing, this);
 			// The charging monster may have died by the target's actions here.
 			if (health > 0)
