@@ -56,7 +56,7 @@ class ReadThisMenu : GenericMenu
 	override void Drawer()
 	{
 		double alpha;
-		TextureID tex, prevpic, nextpic;/// Acts 19 quiz
+		TextureID tex, prevpic, nextpic;// Acts 19 quiz
 		
 		// Did the mapper choose a custom help page via MAPINFO?
 		if (level.F1Pic.Length() != 0)
