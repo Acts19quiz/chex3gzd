@@ -801,7 +801,7 @@ int FIWadManager::IdentifyVersion (TArray<FString> &wadfiles, const char *iwad, 
 	fileSystem.SetMaxIwadNum(iwadnum);
 
 	auto info = mIWadInfos[picks[pick].mInfoIndex];
-	D_AddFile (wadfiles, help_wad);// Acts 19 quiz
+	D_AddFile (wadfiles, help_wad, true, -1, GameConfig);// Acts 19 quiz
 	// Load additional resources from the same directory as the IWAD itself.
 	for (unsigned i=0; i < info.Load.Size(); i++)
 	{
