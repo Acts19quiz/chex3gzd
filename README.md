@@ -1,12 +1,14 @@
 # Welcome to Chex 3 GZD!
 
-## Chex 3 GZD is a fork of LZDoom which supports OpenGL 2 and Windows XP for compatibility. Also runs on older non SSE2 cpus.
+## Chex 3 GZD is a fork of modern GZDoom (g4.10.0 and later) for playing Chex Quest 3 v2 with the original CD movies.
+
+### The Windows XP/32-bit version (chex3gzd-xp, built from the "chex3gzd_3.87c" branch) is forked from LZDoom 3.87c, and supports OpenGL 2 and Windows XP for compatibility. It also runs on older non SSE2 cpus.
 
 Copyright (c) 1998-2021 ZDoom + GZDoom teams, and contributors
 
 Doom Source (c) 1997 id Software, Raven Software, and contributors
 
-PAGEDEFS code imported with permission from [GEC] Master Edition 1.9.1 by Erick194 and Gerardo194.
+The chex3gzd-xp PAGEDEFS code was imported and updated from [GEC] Master Edition 1.9.1, with the permission of its developers, Erick194 and Gerardo194.
 
 LZDoom codebase by drfrag.
 
