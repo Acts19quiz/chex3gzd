@@ -1,4 +1,4 @@
-# Welcome to Chex 3 GZD!
+# Welcome to Chex 3 GZD! Test tags
 
 ## Chex 3 GZD is a fork of modern GZDoom (g4.10.0 and later) for playing Chex Quest 3 v2 with the original CD movies.
 
