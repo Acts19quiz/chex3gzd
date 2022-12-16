@@ -93,10 +93,10 @@ const char *GetVersionString();
 
 // More stuff that needs to be different for derivatives.
 #define GAMENAME "Chex(TM) Quest 3"// Acts 19 quiz (used in the Windows/Linux crash reporter and within the game configuration INI)
-#define WGAMENAME L"Chex™ Quest 3"// Acts 19 quiz (used in the Windows crash reporter)
+#define WGAMENAME L"Chex\u2122 Quest 3"// Acts 19 quiz (used in the Windows crash reporter)
 #define GAMENAMELOWERCASE "chex3gzd-xp"// Acts 19 quiz (used for the file name of the game configuration INI)
-#define FORUM_URL "http://forum.zdoom.org/"
-#define BUGS_FORUM_URL	"http://forum.zdoom.org/viewforum.php?f=2"
+#define FORUM_URL "https://github.com/Acts19quiz/chex3gzd/issues"
+#define BUGS_FORUM_URL	"https://github.com/Acts19quiz/chex3gzd/issues"
 
 #if defined(__APPLE__) || defined(_WIN32)
 #define GAME_DIR GAMENAME
