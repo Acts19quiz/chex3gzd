@@ -222,7 +222,7 @@ BEGIN
     CONTROL         "&Movies",IDC_WELCOME_BRIGHTMAPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,177,51,10// Acts 19 quiz
     //CONTROL         "&Widescreen",IDC_WELCOME_WIDESCREEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,188,48,12 Removed since Chex Quest 3 v2 comes with its own widescreen graphics that are portable to other versions of GZDoom g4.--Acts 19 quiz
     CONTROL         "&Don't ask me again",IDC_DONTASKIWAD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,190,72,10
-    DEFPUSHBUTTON   "&Play Game!",IDOK,8,227,90,14
+    DEFPUSHBUTTON   "&Play Chex™ Quest 3!",IDOK,8,227,90,14
     PUSHBUTTON      "E&xit",IDCANCEL,166,227,50,14
     CONTROL         "&OpenGL",IDC_WELCOME_VULKAN1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,167,41,10
 #ifdef HAVE_VULKAN
