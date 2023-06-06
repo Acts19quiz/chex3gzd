@@ -1,4 +1,70 @@
-body{background-color:#4F3F8B;background-image:url('images/BackGround-150x150.png');color:#FFFFFF;display:block;font-family:"Liera Sans Extra Bold",sans-serif;font-size:16px;margin-left:auto;margin-right:auto}
-img.logo{display:block;margin-bottom:8px;margin-left:auto;margin-right:auto}
-table.footer{border-spacing:0px;font-size:x-small;margin-left:auto;margin-right:auto;line-height:0px}
-td.icon{padding:1px}
+/*https://opensource.com/article/19/3/webfonts
+http://fontlibrary.org/en/font/liera-sans*/
+@font-face{font-family:"Liera Sans Extra Bold";src:url(LieraSans-ExtraBold.ttf)}
+@font-face{font-family:"Liera Sans Regular";src:url(LieraSans-Regular.ttf)}
+a:link{color:#4040FF}
+a:visited{color:#7536EA}
+a.button0{border-color:#CCC;-moz-border-radius:16px 16px 16px 16px;border-radius:16px 16px 16px 16px;border-style:solid;border-width:1px;color:#DDD;cursor:pointer;display:block;height:29px;padding:1px;width:144px;font-family:"Liera Sans Regular",sans-serif;font-size:20px;font-style:italic;font-weight:700;margin-left:auto;margin-right:auto;text-align:center;text-decoration:none}
+a.button0:hover,a.button1:hover{background-color:rgba(255,255,255,0.494);box-shadow:0 0;color:#EEE}
+a.button1{background-color:rgba(255,255,255,0.494);border-color:#CCC;-moz-border-radius:16px 16px 16px 16px;border-radius:16px 16px 16px 16px;border-style:solid;border-width:1px;box-shadow:inset 0 0 2px 4px#E6E6E6;color:#EEE;display:block;height:29px;margin-left:auto;margin-right:auto;padding:1px;width:144px}
+a.logo{color:#D70000}
+body{color:#FFF;font-family:"Liera Sans Extra Bold","Arial Black",sans-serif;font-size:16px;/*Stylistically should be 12px, but here made 12px for legibility.*/margin:0;background-color:#000066;background-image:linear-gradient(#000066,#333399 126px,#996699 231px,#9999CC 357px);background-attachment:fixed;overflow-y:scroll}
+#grad1 {background-image:linear-gradient(#000066, #996699 247px, #9999CC 463px)}
+div.fixedwidth{background-color:#4F3F8B;background-image:url('images/BackGround-150x150.png');margin-left:auto;margin-right:auto;max-width:1366px;min-height:100vh}
+div.bar1{background-color:#444444;background-image:url('images/AG128_2.png');height:100%;position:fixed;width:8px;z-index:2}
+div.div0 a{font-family:"Liera Sans Regular",sans-serif;font-size:20px;font-style:italic;font-weight:700;text-decoration:none}
+div.div0{background-attachment:local;background-color:#000017;background-image:url('images/CJCOMM15.png');height:100%;width:181px;position:fixed;text-align:center;z-index:1;overflow:auto}
+div.bar2{background-color:#444444;background-image:url('images/AG128_2.png');height:100%;top:0px;margin-left:-8px;position:fixed;width:8px;z-index:1}
+/*https://codepen.io/alexandredees/pen/ojaFr
+https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements*/
+div.logocontain{margin-bottom:8px;overflow:hidden}
+div.logo1{float:left;position:relative;left:50%}
+div.logo2{float:left;position:relative;left:-50%}
+div.div1{margin-left:189px;word-wrap:break-word;margin-right:16px;padding-top:8px;padding-bottom:8px;position:relative}
+div.floatright{float:right}
+div.bar3{background-color:#444444;background-image:url('images/AG128_2.png');height:100%;position:fixed;margin-left:-8px;width:8px}
+div.main{background-color:#000017;background-image:url('images/CJCOMM15.png');border:1px solid;margin-bottom:8px}
+div.clear{clear:both}
+img.mdoom{display:block;margin-left:auto;margin-right:auto;margin-top:3px}
+img.logo{display:block;margin-left:auto;margin-right:auto;width:calc(1000px/2.14);height:auto;float:left;max-width:100%}
+div.icons{float:left;position:relative;/*left for left float, right for right float, and -86px correction to properly center it either way*/left:calc(50% - 86px);font-size:x-small}
+div.poison{float:left;padding:1px;line-height:9px}
+img.verified{float:left;padding:1px}
+p.paragraph0{margin-left:18px;margin-right:18px}
+p.title{color:#D5D5D5;font-family:"Liera Sans Extra Bold","Arial Black",sans-serif;font-size:27px;/*font-size:20px*/font-style:italic;font-weight:700;margin-left:18px;margin-right:18px}
+iframe.video{border:0}
+.tooltip{border-bottom:1px dotted;overflow:hidden}
+.tooltip .tooltiptext{visibility:hidden;background-color:#4F3F8B;position:absolute;border:1px solid;padding:16px}
+.tooltip:hover  .tooltiptext{visibility:visible}
+
+/*https://avexdesigns.com/blog/responsive-youtube-embed*/
+div.embed-container{position:relative;padding-bottom:calc(56.25% - 20.25px);overflow:hidden;max-width:100%;margin-left:18px;margin-right:18px}
+div.embed-container iframe,div.embed-container object,div.embed-container embed{position:absolute;width:100%;height:100%}
+/*https://stackoverflow.com/questions/38026714/youtube-embed-dynamic-size-with-min-and-max-size
+The intended max-width is 560px to match the YouTube embed default. However, the desired margins above of 18px (left and right) shrink the main frame into an off-aspect ratio with horizontal black bars that never reach the specified 560px width, even on super-wide monitors (it always caps out at 524px, with a 294.75px-high video inside a 315px-high container).
+To compensate, the total margin size (36px) is added to max-width, and the 56.25% above is modified into a calc (524 / 560 = 0.9357142857142857, 0.9357142857142857 * 315 = 294.75, 315 - 294.75 = 20.25).*/
+div.video-wrapper{width:100%;max-width:596px;float:left}
+
+/*https://www.w3schools.com/howto/howto_js_slideshow.asp*/
+div.slideshow-container{position:relative;margin:auto}
+a.prev,a.next{color:#DDD;cursor:pointer;position:absolute;top:50%;width:auto;margin-top:-22px;padding:16px;font-weight:bold;font-size:18px;-moz-border-radius:0 16px 16px 0;border-radius:0 16px 16px 0;user-select:none}
+a.next{right:0;-moz-border-radius:16px 0 0 16px;border-radius:16px 0 0 16px}
+div.pictext{font-size:15px;padding:8px 0px;position:absolute;bottom:8px;width:100%;text-align:center}
+div.numbertext{font-size:12px;padding:8px 12px;position:absolute;top:0}
+.dot{cursor:pointer;height:15px;width:15px;margin:0 2px;background-color:rgba(255,255,255,0.494);-moz-border-radius:50%;border-radius:50%;display:inline-block}
+.active,.dot:hover{background-color:#DDD}
+a.prev:hover,a.next:hover{background-color:rgba(255,255,255,0.494);color:#EEE}
+/*https://www.codesdope.com/blog/article/adding-outline-to-text-using-css/*/
+a.prev:active,a.next:active{background-color:rgba(255,255,255,0.494);box-shadow:inset 0 0 2px 4px#E6E6E6;color:#EEE}
+.dot:active{background-color:#EEE;box-shadow:0 0 2px 4px#E6E6E6}
+
+div.fade{-webkit-animation-name:fade;-webkit-animation-duration:0.5s;animation-name:fade;animation-duration:0.5s}
+@-webkit-keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/*https://www.w3schools.com/css/css3_images.asp*/
+img.screencap{max-width:100%;height:auto}
+div.slideshow-margins{float:left;margin-left:18px;margin-right:18px}
+/*http://www.corelangs.com/css/box/ontop.html*/
+img.underlay{max-width:100%;height:auto;position:absolute}
+div.slideshow-underframe{position:relative}
