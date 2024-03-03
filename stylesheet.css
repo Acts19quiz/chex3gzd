@@ -4,13 +4,13 @@ http://fontlibrary.org/en/font/liera-sans*/
 @font-face{font-family:"Liera Sans Regular";src:url(LieraSans-Regular.ttf)}
 a:link{color:#4040FF}
 a:visited{color:#7536EA}
-a.button0{border-color:#CCC;-moz-border-radius:16px 16px 16px 16px;border-radius:16px 16px 16px 16px;border-style:solid;border-width:1px;color:#DDD;cursor:pointer;display:block;height:29px;padding:1px;width:144px;font-family:"Liera Sans Regular",sans-serif;font-size:20px;font-style:italic;font-weight:700;margin-left:auto;margin-right:auto;text-align:center;text-decoration:none}
-a.button0:hover,a.button1:hover{background-color:rgba(255,255,255,0.494);box-shadow:0 0;color:#EEE}
-a.button1{background-color:rgba(255,255,255,0.494);border-color:#CCC;-moz-border-radius:16px 16px 16px 16px;border-radius:16px 16px 16px 16px;border-style:solid;border-width:1px;box-shadow:inset 0 0 2px 4px#E6E6E6;color:#EEE;display:block;height:29px;margin-left:auto;margin-right:auto;padding:1px;width:144px}
+a.button0{border-color:#CCC;-moz-border-radius:16px 16px 16px 16px;border-radius:16px 16px 16px 16px;border-style:solid;border-width:1px;color:#DDD;display:block;width:146px;height:30px;margin:auto;padding-top:1px;font-family:"Liera Sans Regular",sans-serif;font-size:20px;font-style:italic;font-weight:700;text-align:center;text-decoration:none;cursor:pointer}
+a.button0:hover,a.button1:hover{color:#EEE;background-color:rgba(255,255,255,0.494);box-shadow:0 0}
+a.button1{border-color:#CCC;-moz-border-radius:16px 16px 16px 16px;border-radius:16px 16px 16px 16px;border-style:solid;border-width:1px;color:#EEE;display:block;width:146px;height:30px;margin:auto;padding-top:1px;background-color:rgba(255,255,255,0.494);box-shadow:inset 0 0 2px 4px#E6E6E6}
 a.logo{color:#D70000}
-body{color:#FFF;font-family:"Liera Sans Extra Bold","Arial Black",sans-serif;font-size:16px;/*Stylistically should be 12px, but here made 12px for legibility.*/margin:0;background-color:#000066;background-image:linear-gradient(#000066,#333399 126px,#996699 231px,#9999CC 357px);background-attachment:fixed;overflow-y:scroll}
+body{color:#FFF;font-family:"Liera Sans Extra Bold","Arial Black",sans-serif;font-size:16px;/*Stylistically should be 12px, but here made 16px for legibility.*/margin:0;background-color:#000066;background-image:linear-gradient(#000066,#333399 126px,#996699 231px,#9999CC 357px);background-attachment:fixed;overflow-y:scroll}
 #grad1 {background-image:linear-gradient(#000066, #996699 247px, #9999CC 463px)}
-div.fixedwidth{background-color:#4F3F8B;background-image:url('images/BackGround-150x150.png');margin-left:auto;margin-right:auto;max-width:1366px;min-height:100vh}
+div.fixedwidth{background-color:#4F3F8B;background-image:url('images/BackGround-150x150.png');margin:auto;max-width:1366px;min-height:100vh}
 div.bar1{background-color:#444444;background-image:url('images/AG128_2.png');height:100%;position:fixed;width:8px;z-index:2}
 div.div0 a{font-family:"Liera Sans Regular",sans-serif;font-size:20px;font-style:italic;font-weight:700;text-decoration:none}
 div.div0{background-attachment:local;background-color:#000017;background-image:url('images/CJCOMM15.png');height:100%;width:181px;position:fixed;text-align:center;z-index:1;overflow:auto}
@@ -25,18 +25,26 @@ div.floatright{float:right}
 div.bar3{background-color:#444444;background-image:url('images/AG128_2.png');height:100%;position:fixed;margin-left:-8px;width:8px}
 div.main{background-color:#000017;background-image:url('images/CJCOMM15.png');border:1px solid;margin-bottom:8px}
 div.clear{clear:both}
-img.mdoom{display:block;margin-left:auto;margin-right:auto;margin-top:3px}
-img.logo{display:block;margin-left:auto;margin-right:auto;width:calc(1000px/2.14);height:auto;float:left;max-width:100%}
+img.mdoom{display:block;margin:auto;margin-top:3px}
+img.logo{display:block;margin:auto;width:calc(1000px/2.14);height:auto;float:left;max-width:100%}
 div.icons{float:left;position:relative;/*left for left float, right for right float, and -86px correction to properly center it either way*/left:calc(50% - 86px);font-size:x-small}
 div.poison{float:left;padding:1px;line-height:9px}
 img.verified{float:left;padding:1px}
 p.paragraph0{margin-left:18px;margin-right:18px}
 p.title{color:#D5D5D5;font-family:"Liera Sans Extra Bold","Arial Black",sans-serif;font-size:27px;/*font-size:20px*/font-style:italic;font-weight:700;margin-left:18px;margin-right:18px}
-iframe.video{border:0}
-.tooltip{border-bottom:1px dotted;overflow:hidden}
-.tooltip .tooltiptext{visibility:hidden;background-color:#4F3F8B;position:absolute;border:1px solid;padding:16px}
-.tooltip:hover  .tooltiptext{visibility:visible}
 
+/*https://www.w3schools.com/css/css_tooltip.asp
+This suggests setting .tooltip to position:relative. However, this causes the tooltip itself (.tooltiptext) to become rigid and maintain a static long rectangle even when there is room to widen out. Therefore, it is omitted so that it can flex in shape like normal paragraphs and divs.
+Another suggestion from there that has an issue: Having display:inline-block here causes the line of text in the paragraph containing the underlined tooltip text to have an unwanted extra pixel of spacing between it and the line below. However, leaving it out does makes the tooltip itself display on top of the tooltiptext, which is also unwanted. This is correctable with more JavaScript, but creating more lines that has to be ran every single time the window is resized isn't worth removing one row of pixels.
+Another benefit of display:inline-block is that it prevents the right edge of the tooltiptext from consuming the space after it when it isn't part of the <span> element.
+https://stackoverflow.com/questions/4814398/how-can-i-check-if-a-scrollbar-is-visible for a commentary on JavaScript being ran on each window resize.*/
+.tooltip{cursor:pointer;display:inline-block;text-decoration-line:underline;text-decoration-style:dashed}
+/*Intended max-width is 327px. The horizontal padding is 32 (16 x 2), and the borders on each side (1 x 2) total 34 more pixels.*/
+.tooltiptext{visibility:hidden;background-color:#4F3F8B;border:1px solid;padding:16px;position:absolute;max-width:293px}
+/*This part is omitted because due to having mobile device-intended click activation on top of the desktop-intended hover activation, we need to keep track of a certain variable in order to keep track of the visibility state. This means we need to call a function whenever the pointer hovers over the text. So the hover function is moved over to the script instead of this CSS.*/ 
+/*.tooltip:hover .tooltiptext{visibility:visible}*/
+
+iframe.video{border:0}
 /*https://avexdesigns.com/blog/responsive-youtube-embed*/
 div.embed-container{position:relative;padding-bottom:calc(56.25% - 20.25px);overflow:hidden;max-width:100%;margin-left:18px;margin-right:18px}
 div.embed-container iframe,div.embed-container object,div.embed-container embed{position:absolute;width:100%;height:100%}
