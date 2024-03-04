@@ -27,7 +27,7 @@ div.main{background-color:#000017;background-image:url('images/CJCOMM15.png');bo
 div.clear{clear:both}
 img.mdoom{display:block;margin:auto;margin-top:3px}
 img.logo{display:block;margin:auto;width:calc(1000px/2.14);height:auto;float:left;max-width:100%}
-div.icons{float:left;position:relative;/*left for left float, right for right float, and -86px correction to properly center it either way*/left:calc(50% - 86px);font-size:x-small}
+div.icons{float:left;position:relative;/*left for left float, right for right float, and -86px correction to properly center it either way*/left:calc(50% - 45px);font-size:x-small}
 img.verified{float:left;padding:1px}
 p.paragraph0{margin-left:18px;margin-right:18px}
 p.title{color:#D5D5D5;font-family:"Liera Sans Extra Bold","Arial Black",sans-serif;font-size:27px;/*font-size:20px*/font-style:italic;font-weight:700;margin-left:18px;margin-right:18px}
