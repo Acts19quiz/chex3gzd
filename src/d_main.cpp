@@ -1999,13 +1999,13 @@ static void AddAutoloadFiles(const char *autoname, std::vector<std::string>& all
 	{
 		if ((GameStartupInfo.LoadLights == 1 || (GameStartupInfo.LoadLights != 0 && autoloadlights)) && !(Args->CheckParm("-nolights")))
 		{
-			const char *lightswad = BaseFileSearch ("lights.pk3", NULL, true, GameConfig);
+			const char *lightswad = BaseFileSearch ("cq3gldef.pk3", NULL, true, GameConfig);// Acts 19 quiz
 			if (lightswad)
 				D_AddFile (allwads, lightswad, true, -1, GameConfig);
 		}
 		if ((GameStartupInfo.LoadBrightmaps == 1 || (GameStartupInfo.LoadBrightmaps != 0 && autoloadbrightmaps)) && !(Args->CheckParm("-nobrightmaps")))
 		{
-			const char *bmwad = BaseFileSearch ("brightmaps.pk3", NULL, true, GameConfig);
+			const char *bmwad = BaseFileSearch ("cq3smk.pk3", NULL, true, GameConfig);// Acts 19 quiz
 			if (bmwad)
 				D_AddFile (allwads, bmwad, true, -1, GameConfig);
 		}
@@ -3693,6 +3693,7 @@ static int D_DoomMain_Internal (void)
 	FString basewad = wad;
 
 	FString optionalwad = BaseFileSearch(OPTIONALWAD, NULL, true, GameConfig);
+	FString helpwad = BaseFileSearch(HELPWAD, NULL, true, GameConfig);// Acts 19 quiz
 
 	iwad_man = new FIWadManager(basewad, optionalwad);
 
@@ -3730,7 +3731,7 @@ static int D_DoomMain_Internal (void)
 
 		std::vector<std::string> allwads;
 		
-		const FIWADInfo *iwad_info = iwad_man->FindIWAD(allwads, iwad, basewad, optionalwad);
+		const FIWADInfo *iwad_info = iwad_man->FindIWAD(allwads, iwad, basewad, optionalwad, helpwad);// Acts 19 quiz
 		if (!iwad_info) return 0;	// user exited the selection popup via cancel button.
 		if ((iwad_info->flags & GI_SHAREWARE) && pwads.size() > 0)
 		{
