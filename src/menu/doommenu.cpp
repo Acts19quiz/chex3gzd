@@ -297,6 +297,7 @@ void System_M_Dim()
 
 static void M_Quit()
 {
+	DeleteScreenJob();// Acts 19 quiz
 	S_StopAllChannels();
 	S_StopMusic(true);
 	CleanSWDrawer();
