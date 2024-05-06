@@ -43,14 +43,6 @@ void CheckboxLabel::OnPaint(Canvas* canvas)
 
 	if (checked)
 	{
-		// Acts 19 quiz alpha
-		/*
-		The first number controls x. Lowering the number narrows the right edge. Increasing the number moves the box to the right.
-		The second number controls y positioning. Lowering the number raises it. Increasing the number lowers it.
-		The third number controls y positioning. Lowering the number lowers it. Increasing the number raises it.
-		The forth number controls box right edge. Lowering the number narrows it. Raising the number widens it.
-		The fifth number controls box bottom edge. Lowering the number narrows it. Raising the number widens it.
-		*/
 		canvas->fillRect(Rect::xywh(0.0, GetHeight() * 0.5 - 6.0, 10.0, 10.0), Colorf::fromRgba8(100, 100, 100));
 		canvas->fillRect(Rect::xywh(1.0, GetHeight() * 0.5 - 5.0, 8.0, 8.0), Colorf::fromRgba8(51, 51, 51));
 		canvas->fillRect(Rect::xywh(2.0, GetHeight() * 0.5 - 4.0, 6.0, 6.0), Colorf::fromRgba8(226, 223, 219));
