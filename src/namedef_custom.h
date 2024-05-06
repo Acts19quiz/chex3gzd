@@ -191,6 +191,7 @@ xx(InstantDeath)	// Strife "instant death"
 xx(PoisonCloud)	// makes monsters howl.
 xx(Hitscan)		// for normal guns and the like
 xx(Quake)
+xx(Flem)	// Defined for Chex Quest monster damage type, and in particular the Flem Mine.--Acts 19 quiz
 
 // Special death name for getting killed excessively. Could be used as
 // a damage type if you wanted to force an extreme death.

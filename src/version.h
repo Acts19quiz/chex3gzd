@@ -91,18 +91,19 @@ const char *GetVersionString();
 #define SAVEVER 4560
 
 // This is so that derivates can use the same savegame versions without worrying about engine compatibility
-#define GAMESIG "GZDOOM"
+#define GAMESIG "CQ3"// Acts 19 quiz (used in the start-up header)
 #define BASEWAD "gzdoom.pk3"
+#define HELPWAD "cq3help.pk3"// Acts 19 quiz
 #define OPTIONALWAD "game_support.pk3"
 #define GZDOOM 1
 #define VR3D_ENABLED
 
 // More stuff that needs to be different for derivatives.
-#define GAMENAME "GZDoom"
-#define WGAMENAME L"GZDoom"
-#define GAMENAMELOWERCASE "gzdoom"
-#define FORUM_URL "http://forum.zdoom.org/"
-#define BUGS_FORUM_URL	"http://forum.zdoom.org/viewforum.php?f=2"
+#define GAMENAME "Chex Quest 3"// Acts 19 quiz (used in the Windows/Linux crash reporter, within the game configuration INI, and in g4.9.0 the folders placed in "%USERPROFILE%\Saved Games" and "%USERPROFILE%\Documents\My Games")
+#define WGAMENAME L"Chex\u2122 Quest 3"// Acts 19 quiz (used in the Windows crash reporter)
+#define GAMENAMELOWERCASE "chex3gzd"// Acts 19 quiz (used for the file name of the game configuration INI)
+#define FORUM_URL "https://github.com/Acts19quiz/chex3gzd/issues"// Acts 19 quiz
+#define BUGS_FORUM_URL	"https://github.com/Acts19quiz/chex3gzd/issues"// Acts 19 quiz
 
 #if defined(__APPLE__) || defined(_WIN32)
 #define GAME_DIR GAMENAME

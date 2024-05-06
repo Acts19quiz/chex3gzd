@@ -140,7 +140,8 @@ void SettingsPage::UpdateLanguage()
 	DontAskAgainCheckbox->SetText(GStrings("PICKER_DONTASK"));
 	LightsCheckbox->SetText(GStrings("PICKER_LIGHTS"));
 	BrightmapsCheckbox->SetText(GStrings("PICKER_BRIGHTMAPS"));
-	WidescreenCheckbox->SetText(GStrings("PICKER_WIDESCREEN"));
+	// Acts 19 quiz
+	// WidescreenCheckbox->SetText(GStrings("PICKER_WIDESCREEN"));
 
 #ifdef RENDER_BACKENDS
 	BackendLabel->SetText(GStrings("PICKER_PREFERBACKEND"));

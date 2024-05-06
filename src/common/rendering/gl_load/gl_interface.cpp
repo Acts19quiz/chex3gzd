@@ -140,7 +140,13 @@ void gl_LoadExtensions()
 	// Don't even start if it's lower than 2.0 or no framebuffers are available (The framebuffer extension is needed for glGenerateMipmapsEXT!)
 	if (gl_version < 3.3f)
 	{
-		I_FatalError("Unsupported OpenGL version.\nAt least OpenGL 3.3 is required to run " GAMENAME ".\n");
+#ifdef _WIN32// Acts 19 quiz
+		I_FatalError("Unsupported OpenGL version.\nAt least OpenGL 3.3 is required to run " GAMENAME ".\nTry selecting \"OpenGL ES\" under \"Rendering API\".\n");// Acts 19 quiz
+#elif __APPLE__
+		I_FatalError("Unsupported OpenGL version.\nAt least OpenGL 3.3 is required to run " GAMENAME ".\nTry opening ~/Library/Preferences/" GAMENAMELOWERCASE ".ini and changing the line \"vid_preferbackend=#\" to \"vid_preferbackend=2\".\n");
+#else
+		I_FatalError("Unsupported OpenGL version.\nAt least OpenGL 3.3 is required to run " GAMENAME ".\nTry opening ~/.config/" GAMENAMELOWERCASE "/" GAMENAMELOWERCASE ".ini and changing the line \"vid_preferbackend=#\" to \"vid_preferbackend=2\".\n");
+#endif
 	}
 
 
