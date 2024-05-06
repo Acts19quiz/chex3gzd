@@ -26,7 +26,7 @@ double LauncherButtonbar::GetPreferredHeight() const
 
 void LauncherButtonbar::OnGeometryChanged()
 {
-	PlayButton->SetFrameGeometry(20.0, 10.0, 120.0, PlayButton->GetPreferredHeight());
+	PlayButton->SetFrameGeometry(20.0, 10.0, 150.0, PlayButton->GetPreferredHeight());// Acts 19 quiz
 	ExitButton->SetFrameGeometry(GetWidth() - 20.0 - 120.0, 10.0, 120.0, PlayButton->GetPreferredHeight());
 }
 

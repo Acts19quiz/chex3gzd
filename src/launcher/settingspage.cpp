@@ -162,7 +162,7 @@ void SettingsPage::OnLanguageChanged(int i)
 
 void SettingsPage::OnGeometryChanged()
 {
-	double panelWidth = 200.0;
+	double panelWidth = 160.0;// Acts 19 quiz
 	double y = 0.0;
 	double w = GetWidth();
 	double h = GetHeight();
@@ -180,7 +180,8 @@ void SettingsPage::OnGeometryChanged()
 	y += DisableAutoloadCheckbox->GetPreferredHeight();
 
 	DontAskAgainCheckbox->SetFrameGeometry(0.0, y, 190.0, DontAskAgainCheckbox->GetPreferredHeight());
-	WidescreenCheckbox->SetFrameGeometry(w - panelWidth, y, panelWidth, WidescreenCheckbox->GetPreferredHeight());
+	// Acts 19 quiz
+	// WidescreenCheckbox->SetFrameGeometry(w - panelWidth, y, panelWidth, WidescreenCheckbox->GetPreferredHeight());
 	y += DontAskAgainCheckbox->GetPreferredHeight();
 
 #ifdef RENDER_BACKENDS

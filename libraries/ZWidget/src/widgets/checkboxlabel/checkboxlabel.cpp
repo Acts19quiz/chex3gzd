@@ -43,6 +43,7 @@ void CheckboxLabel::OnPaint(Canvas* canvas)
 
 	if (checked)
 	{
+		// Acts 19 quiz alpha
 		/*
 		The first number controls x. Lowering the number narrows the right edge. Increasing the number moves the box to the right.
 		The second number controls y positioning. Lowering the number raises it. Increasing the number lowers it.
