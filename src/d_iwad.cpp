@@ -558,7 +558,7 @@ void FIWadManager::ValidateIWADs()
 
 static bool havepicked = false;
 
-int FIWadManager::IdentifyVersion (std::vector<std::string>&wadfiles, const char *iwad, const char *zdoom_wad, const char *help_wad)// Acts 19 quiz
+int FIWadManager::IdentifyVersion (std::vector<std::string>&wadfiles, const char *iwad, const char *zdoom_wad, const char *optional_wad, const char *help_wad)// Acts 19 quiz
 {
 	const char *iwadparm = Args->CheckValue ("-iwad");
 	FString custwad;
