@@ -17,13 +17,13 @@ div.div0{background-attachment:local;background-color:#000017;background-image:u
 div.bar2{background-color:#444444;background-image:url('images/AG128_2.png');height:100%;top:0px;margin-left:-8px;position:fixed;width:8px;z-index:1}
 /*https://codepen.io/alexandredees/pen/ojaFr
 https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements*/
-div.logocontain{margin-bottom:8px;overflow:hidden}
+div.logocontain{margin-bottom:16px;overflow:hidden}
 div.logo1{float:left;position:relative;left:50%}
 div.logo2{float:left;position:relative;left:-50%}
-div.div1{margin-left:189px;word-wrap:break-word;margin-right:16px;padding-top:8px;padding-bottom:8px;position:relative}
+div.div1{margin-left:195px;word-wrap:break-word;margin-right:24px;padding-top:16px;padding-bottom:16px;position:relative}
 div.floatright{float:right}
 div.bar3{background-color:#444444;background-image:url('images/AG128_2.png');height:100%;position:fixed;margin-left:-8px;width:8px}
-div.main{background-color:#000017;background-image:url('images/CJCOMM15.png');border:1px solid;margin-bottom:8px}
+div.main{background-color:#000017;background-image:url('images/CJCOMM15.png');border:1px solid;margin-bottom:16px}
 div.clear{clear:both}
 img.mdoom{display:block;margin:auto;margin-top:3px}
 img.logo{display:block;margin:auto;width:calc(1000px/2.14);height:auto;float:left;max-width:100%}
