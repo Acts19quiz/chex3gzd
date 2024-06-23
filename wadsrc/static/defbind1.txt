@@ -4,7 +4,7 @@ w +forward
 s +back
 a +moveleft
 d +moveright
-e +jump
-x crouch
+// e +jump Acts 19 quiz
+// x crouch Acts 19 quiz
 mouse2 +altattack
 mouse3 invuse
