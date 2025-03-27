@@ -1,1 +1,4 @@
 ErrorDocument 404 /404.html
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^chexquest3.com 
+RewriteRule (.*) https://www.chexquest.com/$1 [R=301,L]
