@@ -1,6 +1,5 @@
 ErrorDocument 404 /404.html
-RewriteEngine On
 # Redirect to www
+RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
 RewriteCond %{HTTPS}s ^on(s)|
-
-RewriteRule ^(.*)$ http%1://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
