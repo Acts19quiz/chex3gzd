@@ -140,7 +140,7 @@ void SettingsPage::UpdateLanguage()
 	DontAskAgainCheckbox->SetText(GStrings.GetString("PICKER_DONTASK"));
 	LightsCheckbox->SetText(GStrings.GetString("PICKER_LIGHTS"));
 	BrightmapsCheckbox->SetText(GStrings.GetString("PICKER_BRIGHTMAPS"));
-	WidescreenCheckbox->SetText(GStrings.GetString("PICKER_WIDESCREEN"));
+	// WidescreenCheckbox->SetText(GStrings.GetString("PICKER_WIDESCREEN")); Acts 19 quiz
 
 #ifdef RENDER_BACKENDS
 	BackendLabel->SetText(GStrings.GetString("PICKER_PREFERBACKEND"));
@@ -179,7 +179,7 @@ void SettingsPage::OnGeometryChanged()
 	y += DisableAutoloadCheckbox->GetPreferredHeight();
 
 	DontAskAgainCheckbox->SetFrameGeometry(0.0, y, 190.0, DontAskAgainCheckbox->GetPreferredHeight());
-	WidescreenCheckbox->SetFrameGeometry(w - panelWidth, y, panelWidth, WidescreenCheckbox->GetPreferredHeight());
+	// WidescreenCheckbox->SetFrameGeometry(w - panelWidth, y, panelWidth, WidescreenCheckbox->GetPreferredHeight()); Acts 19 quiz
 	y += DontAskAgainCheckbox->GetPreferredHeight();
 
 #ifdef RENDER_BACKENDS

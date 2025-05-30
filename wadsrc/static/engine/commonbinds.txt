@@ -52,7 +52,7 @@ end centerview
 
 // Xbox 360 / PS2 controllers
 pad_a +use
-pad_y +jump
+// pad_y +jump Acts 19 quiz
 rtrigger +attack
 ltrigger +altattack
 lshoulder weapprev
@@ -63,11 +63,11 @@ dpaddown invuse
 dpadup togglemap
 pad_start menu_main
 pad_back pause
-lthumb crouch
+// lthumb crouch Acts 19 quiz
 
 // Generic gamepad bindings
 joy1 +use
-joy4 +jump
+// joy4 +jump Acts 19 quiz
 axis6plus +attack
 axis3plus +altattack
 joy5 weapprev
@@ -78,7 +78,7 @@ pov1down invuse
 pov1up togglemap
 joy8 menu_main
 joy7 pause
-joy10 crouch
+// joy10 crouch Acts 19 quiz
 
 /* Default automap bindings */
 mapbind f am_togglefollow

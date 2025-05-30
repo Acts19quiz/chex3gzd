@@ -37,6 +37,7 @@ class ReadThisMenu : GenericMenu
 {
 	int mScreen;
 	int mInfoTic;
+	int mReverse;// Acts 19 quiz
 
 	//=============================================================================
 	//
@@ -49,12 +50,13 @@ class ReadThisMenu : GenericMenu
 		Super.Init(parent);
 		mScreen = 1;
 		mInfoTic = gametic;
+		mReverse = 0;// Acts 19 quiz
 	}
 
 	override void Drawer()
 	{
 		double alpha;
-		TextureID tex, prevpic;
+		TextureID tex, prevpic, nextpic;// Acts 19 quiz
 		
 		// Did the mapper choose a custom help page via MAPINFO?
 		if (Level.F1Pic.Length() != 0)
@@ -68,16 +70,25 @@ class ReadThisMenu : GenericMenu
 			tex = TexMan.CheckForTexture(gameinfo.infoPages[mScreen-1], TexMan.Type_MiscPatch);
 		}
 
-		if (mScreen > 1)
+		if (mScreen > 1 && mReverse == 0)// Acts 19 quiz if (mScreen > 1)
 		{
 			prevpic = TexMan.CheckForTexture(gameinfo.infoPages[mScreen-2], TexMan.Type_MiscPatch);
 		}
 
+		if (mReverse == 1)// Acts 19 quiz
+		{
+			nextpic = TexMan.CheckForTexture(gameinfo.infoPages[mScreen], TexMan.Type_MiscPatch);
+		}
+
 		screen.Dim(0, 1.0, 0,0, screen.GetWidth(), screen.GetHeight());
 		alpha = MIN((gametic - mInfoTic) * (3. / GameTicRate), 1.);
-		if (alpha < 1. && prevpic.IsValid())
+		if (alpha < 1. && prevpic.IsValid() && mReverse == 0)// Acts 19 quiz if (alpha < 1. && prevpic.IsValid())
 		{
 			screen.DrawTexture (prevpic, false, 0, 0, DTA_Fullscreen, true);
+		}
+		else if (alpha < 1. && nextpic.IsValid())// Acts 19 quiz
+		{
+			screen.DrawTexture (nextpic, false, 0, 0, DTA_Fullscreen, true);
 		}
 		else alpha = 1;
 		screen.DrawTexture (tex, false, 0, 0, DTA_Fullscreen, true, DTA_Alpha, alpha);
@@ -95,10 +106,47 @@ class ReadThisMenu : GenericMenu
 	{
 		if (mkey == MKEY_Enter)
 		{
+			mReverse = 0;// Acts 19 quiz
 			MenuSound("menu/choose");
 			mScreen++;
 			mInfoTic = gametic;
 			if (Level.F1Pic.Length() != 0 || mScreen > gameinfo.infoPages.Size())
+			{
+				Close();
+			}
+			return true;
+		}
+		if (mkey == MKEY_Right)// Acts 19 quiz
+		{
+			mReverse = 0;
+			MenuSound("menu/choose");
+			mScreen++;
+			mInfoTic = gametic;
+			if (level.F1Pic.Length() != 0 || mScreen > gameinfo.infoPages.Size())
+			{
+				Close();
+			}
+			return true;
+		}
+		if (mkey == MKEY_Left)// Acts 19 quiz
+		{
+			mReverse = 1;
+			MenuSound("menu/choose");
+			mScreen--;
+			mInfoTic = gametic;
+			if (level.F1Pic.Length() != 0 || mScreen == 0)
+			{
+				Close();
+			}
+			return true;
+		}
+		if (mkey == MKEY_Clear)// Acts 19 quiz
+		{
+			mReverse = 1;
+			MenuSound("menu/choose");
+			mScreen--;
+			mInfoTic = gametic;
+			if (level.F1Pic.Length() != 0 || mScreen == 0)
 			{
 				Close();
 			}

@@ -296,7 +296,7 @@ CUSTOM_CVAR (String, vid_cursor, "None", CVAR_ARCHIVE | CVAR_NOINITCALL)
 CVAR(Bool, disableautoload, false, CVAR_ARCHIVE | CVAR_NOINITCALL | CVAR_GLOBALCONFIG)
 CVAR(Bool, autoloadbrightmaps, false, CVAR_ARCHIVE | CVAR_NOINITCALL | CVAR_GLOBALCONFIG)
 CVAR(Bool, autoloadlights, false, CVAR_ARCHIVE | CVAR_NOINITCALL | CVAR_GLOBALCONFIG)
-CVAR(Bool, autoloadwidescreen, true, CVAR_ARCHIVE | CVAR_NOINITCALL | CVAR_GLOBALCONFIG)
+CVAR(Bool, autoloadwidescreen, false, CVAR_ARCHIVE | CVAR_NOINITCALL | CVAR_GLOBALCONFIG)// Acts 19 quiz
 CVAR(Bool, r_debug_disable_vis_filter, false, 0)
 CVAR(Int, vid_showpalette, 0, 0)
 
@@ -2029,13 +2029,13 @@ static void AddAutoloadFiles(const char *autoname, std::vector<std::string>& all
 	{
 		if ((GameStartupInfo.LoadLights == 1 || (GameStartupInfo.LoadLights != 0 && autoloadlights)) && !(Args->CheckParm("-nolights")))
 		{
-			const char *lightswad = BaseFileSearch ("lights.pk3", NULL, true, GameConfig);
+			const char *lightswad = BaseFileSearch ("cq3gldef.pk3", NULL, true, GameConfig);// Acts 19 quiz
 			if (lightswad)
 				D_AddFile (allwads, lightswad, true, -1, GameConfig);
 		}
 		if ((GameStartupInfo.LoadBrightmaps == 1 || (GameStartupInfo.LoadBrightmaps != 0 && autoloadbrightmaps)) && !(Args->CheckParm("-nobrightmaps")))
 		{
-			const char *bmwad = BaseFileSearch ("brightmaps.pk3", NULL, true, GameConfig);
+			const char *bmwad = BaseFileSearch ("cq3smk.pk3", NULL, true, GameConfig);// Acts 19 quiz
 			if (bmwad)
 				D_AddFile (allwads, bmwad, true, -1, GameConfig);
 		}
@@ -3696,6 +3696,7 @@ static int D_DoomMain_Internal (void)
 	FString basewad = wad;
 
 	FString optionalwad = BaseFileSearch(OPTIONALWAD, NULL, true, GameConfig);
+	FString helpwad = BaseFileSearch(HELPWAD, NULL, true, GameConfig);// Acts 19 quiz
 
 	iwad_man = new FIWadManager(basewad.GetChars(), optionalwad.GetChars());
 
@@ -3733,7 +3734,7 @@ static int D_DoomMain_Internal (void)
 
 		std::vector<std::string> allwads;
 		
-		const FIWADInfo *iwad_info = iwad_man->FindIWAD(allwads, iwad.GetChars(), basewad.GetChars(), optionalwad.GetChars());
+		const FIWADInfo *iwad_info = iwad_man->FindIWAD(allwads, iwad.GetChars(), basewad.GetChars(), optionalwad.GetChars(), helpwad.GetChars());// Acts 19 quiz
 
 		GetCmdLineFiles(pwads); // [RL0] Update with files passed on the launcher extra args
 
