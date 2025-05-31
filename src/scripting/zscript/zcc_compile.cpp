@@ -2082,6 +2082,11 @@ PType *ZCCCompiler::ResolveArraySize(PType *baseType, ZCC_Expression *arraysize,
 			Error(arraysize, "Array size must be positive");
 			return TypeError;
 		}
+		if (uint64_t(size) * baseType->Size > 0x7fffffff)// Acts 19 quiz
+		{
+			Error(arraysize, "Array size overflow. Total size must be less than 2GB");
+			return TypeError;
+		}
 		baseType = NewArray(baseType, size);
 	}
 
@@ -2414,8 +2419,16 @@ void ZCCCompiler::ProcessDefaultProperty(PClassActor *cls, ZCC_PropertyStmt *pro
 	}
 	else if (namenode->SiblingNext->SiblingNext == namenode)
 	{
+		// Acts 19 quiz
+		FName name(namenode->Id);
+
+		if (name == NAME_self)
+		{
+			name = cls->TypeName;
+		}
+
 		// a two-name property
-		propname << FName(namenode->Id) << "." << FName(static_cast<ZCC_Identifier *>(namenode->SiblingNext)->Id);
+		propname << name.GetChars() << "." << FName(static_cast<ZCC_Identifier*>(namenode->SiblingNext)->Id).GetChars();
 	}
 	else
 	{
@@ -2474,6 +2487,13 @@ void ZCCCompiler::ProcessDefaultFlag(PClassActor *cls, ZCC_FlagStmt *flg)
 	else if (namenode->SiblingNext->SiblingNext == namenode)
 	{
 		// a two-name flag
+		
+		if(namenode->Id == NAME_self)
+		{
+			n1 = cls->TypeName.GetChars();
+		}
+
+
 		n2 = FName(static_cast<ZCC_Identifier *>(namenode->SiblingNext)->Id).GetChars();
 	}
 	else
