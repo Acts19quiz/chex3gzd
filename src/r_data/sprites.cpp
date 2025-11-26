@@ -1016,7 +1016,7 @@ void R_InitSprites ()
 	{
 		auto basetype = GetDefaultByType(PlayerClasses[i].Type);
 
-		Skins[i].Name = "CornChex(TM)";// Acts 19 quiz
+		Skins[i].Name = "CornChx";// Acts 19 quiz
 		auto face = basetype->NameVar(NAME_Face);
 		Skins[i].Face = face == NAME_None? FName("STF") : face;
 		Skins[i].range0start = basetype->IntVar(NAME_ColorRangeStart);
